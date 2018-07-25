@@ -1,5 +1,3 @@
-// 180724 浅野さんより 「Sedgewick, R. (1997). Algorithms in C: Parts 1-4, Fundamentals, Data Structures, Sorting, and Searching, Addison-Wesley Longman Publishing Co., Inc.」の日本語版を元にしたとのこと
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -61,3 +59,9 @@ int main(void)
 
     return 0;
 }
+
+//////////////////////////////////////////////////////////////////////
+// Changelog
+// Jul 24, 2018: 浅野さんより 「Sedgewick, R. (1997). Algorithms in C: Parts 1-4, Fundamentals, Data Structures, Sorting, and Searching, Addison-Wesley Longman Publishing Co., Inc.」の日本語版を元にしたとのこと
+// Jul 25, 2018: 整形
+//////////////////////////////////////////////////////////////////////
