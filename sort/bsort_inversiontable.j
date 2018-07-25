@@ -5,30 +5,21 @@
 // Tested on http://tetsuo.jp/janus-playground-180405/
 //////////////////////////////////////////////////////////////////////
 
-procedure bsort(int in[], int inv[], int sz)
-  local int i = sz - 1
-    from  i = sz - 1 loop
-      local int j = 0
-        from  j = 0 loop
-          if in[j+1] < in[j] then
-	     in[j] <=> in[j+1]
-             inv[sz-i+j] += 1 // increment inversion table
-          fi inv[sz-i+j] = sz - i
-          j += 1
-        until j = i
-      delocal int j = i
-      i -= 1
-    until i = 0
-  delocal int i = 0
-  
+procedure bsort(int in[], int inv[])
+  iterate int i = size(in)-1 by -1 to 0
+    iterate int j = 0 to i-1
+      if in[j+1] < in[j] then
+           in[j] <=> in[j+1]
+         inv[size(in)-i+j] += 1   // increment inversion table
+      fi inv[size(in)-i+j] = size(in)-i
+    end
+  end  
 
 procedure main()
   int a[5] = {20,50,40,10,30}     // input array
-  int sz       // size of array a[]
   int inv[5]   // inversion table
-  sz += 5
   
-  call bsort(a,inv,sz)
+  call bsort(a,inv)
 
 //////////////////////////////////////////////////////////////////////
 // Changelog
