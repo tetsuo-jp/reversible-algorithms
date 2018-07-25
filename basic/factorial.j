@@ -1,34 +1,28 @@
 // Iterative factorial
 procedure factI(int n, int res)
+  assert(n>=0)
   res ^= 1
-  local int i = 0
-      from  i = 0
-      loop  i += 1
-            local int tmp = res * i
-                res <=> tmp
-            delocal int tmp = res / i
-      until i = n
-  delocal int i = n
+  iterate int i = 1 to n
+    local int tmp = res * i
+      res <=> tmp
+    delocal int tmp = res / i
+  end
 
-// Recursive factorial: factR is called exponential times
+// Recursive factorial: factR is called linear times
 procedure factR(int n, int res)
   if n = 0 then
     res ^= 1
   else
-    n -= 1
-    local int tmp = 0
-      call factR(n, tmp)
-      res ^= (n + 1) * tmp
-      uncall factR(n, tmp)
-    delocal int tmp = 0
-    n += 1
+    call factR(n-1, res)
+    local int tmp = res * n
+      res <=> tmp
+    delocal int tmp = res / n
   fi n = 0
 
 procedure main()
-  int n
+  int n = 5
   int res
 
-  n += 5
   call factR(n,res)
   print("The 5-th factorial is...")
   show(res)
