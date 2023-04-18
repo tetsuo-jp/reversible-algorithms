@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-// counting sort with input as garbage
+// Reversible counting sort with input as garbage
 // Cormen, T. H., et al. (2009). Introduction to Algorithms third edition, The MIT Press. p.195
 // Cormen, T. H., et al. (2022). Introduction to Algorithms fourth edition, The MIT Press. p.209
 //////////////////////////////////////////////////////////////////////
@@ -48,5 +48,5 @@ procedure main()
 // May 14, 2014: Initial construction
 // Apr 7,  2015: First commit
 // Jul 25, 2018: Fix layout
-// Apr 18, 2023: Use "iterate" loops, zero clear intermediate garbage array c, and add comments
+// Apr 18, 2023: Use "iterate" loops, zero clear intermediate garbage array c, add comments, and delete procedure xcopyArray
 //////////////////////////////////////////////////////////////////////

@@ -1,15 +1,8 @@
 //////////////////////////////////////////////////////////////////////
-// counting sort with optimal garbage
+// Reversible counting sort
 // Cormen, T. H., et al. (2009). Introduction to Algorithms third edition, The MIT Press. p.195
+// Cormen, T. H., et al. (2022). Introduction to Algorithms fourth edition, The MIT Press. p.209
 //////////////////////////////////////////////////////////////////////
-
-procedure xcopyArray(int s[], int t[], int n)
-  local int i = 0
-    from  i = 0
-    do    t[i] ^= s[i]
-          i += 1
-    until i = n
-  delocal int i = n
 
 procedure csort(int a[], int b[], int c[], int k)
   local int j = 0
@@ -41,10 +34,16 @@ procedure main()
   int k = 6    // the range of elements
 
   call csort(a,b,c,k)
+  // Output (a and c are garbage):
+  // a[8] = {2, 5, 3, 0, 2, 3, 0, 3}
+  // b[8] = {0, 0, 0, 2, 3, 3, 3, 5}
+  // c[6] = {0, 2, 3, 4, 7, 7}
+  // k = 6
 
 //////////////////////////////////////////////////////////////////////
 // Changelog
 // May 14, 2014: Initial construction
 // Apr 7,  2015: First commit
 // Jul 25, 2018: Fix layout
+// Apr 18, 2023: delete procedure xcopyArray, and change comments
 //////////////////////////////////////////////////////////////////////
